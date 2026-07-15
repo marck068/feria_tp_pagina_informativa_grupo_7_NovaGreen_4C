@@ -1,0 +1,130 @@
+/* --- ESTILOS GENERALES Y FONDO --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dcd7bd; /* Color beige de fondo de la imagen */
+    margin: 0;
+    padding: 0;
+    color: #ffffff; /* La mayoría del texto es blanco */
+}
+
+/* --- CABECERA (Fondo Verde) --- */
+header {
+    background-color: #2d742b;
+    padding: 20px 10px;
+    text-align: center;
+    border-bottom: solid 7px #1b4e1a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra sutil inferior */
+}
+
+header h1 {
+    font-size: 4rem;
+    margin: 0 0 15px 0;
+    font-weight: normal;
+}
+
+/* Barra de navegación */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav a {
+    color: #00eeff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: opacity 0.2s;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.container {
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.cont-back {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre las filas */
+}
+
+/* --- ESTILO BASE PARA TODAS LAS CAJAS --- */
+.box-bg {
+    padding: 20px 30px;
+    text-align: center; /* Todo el texto va centrado como en la imagen */
+    border: 3px solid #e1dbbe; /* Borde grueso claro característico */
+    border-radius: 4px;
+    
+    /* Pequeña sombra solicitada para dar profundidad */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2); 
+    
+    transition: transform 0.2s;
+}
+
+.box-bg:hover {
+    transform: translateY(-2px); /* Efecto interactivo sutil */
+}
+
+.box-bg h2, .box-bg h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 2.7rem;
+}
+
+.box-bg p {
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Enlaces dentro de las cajas */
+.box-bg a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* --- GRADIENTES PERSONALIZADOS POR CAJA --- */
+
+/* Fila 1: Caja Verde Oliva (¿Qué es Salva la Ciudad?) */
+.box-1 {
+    background: linear-gradient(180deg, #878c1c 0%, #6e7214 100%);
+}
+.box-1 h2 {
+    color: #ffffff;
+}
+
+/* Fila 2: Caja Marrón/Rojizo (Jugar ya) */
+.box-2 {
+    background: linear-gradient(180deg, #91221b 0%, #751914 100%);
+    padding: 15px 20px; /* Un poco más delgada como en la foto */
+}
+
+/* Fila 3: Caja Azul Marino (¿Quiénes somos?) */
+.box-3 {
+    background: linear-gradient(180deg, #18227c 0%, #101659 100%);
+}
+.box-3 h3 {
+    color: #ffffff;
+}
+
+/* --- DISEÑO RESPONSIVO (CELULARES) --- */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .box-bg h2, .box-bg h3 {
+        font-size: 1.4rem;
+    }
+    .box-bg p {
+        font-size: 1rem;
+    }
+}
