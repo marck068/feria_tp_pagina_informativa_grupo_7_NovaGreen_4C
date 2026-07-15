@@ -7,13 +7,18 @@ body {
     color: #ffffff; /* La mayoría del texto es blanco */
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 /* --- CABECERA (Fondo Verde) --- */
 header {
     background-color: #2d742b;
     padding: 20px 10px;
     text-align: center;
     border-bottom: solid 7px #1b4e1a;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra sutil inferior */
+    box-shadow: 0 4px 10px #00000026; /* Sombra sutil inferior */
+    margin-bottom: 15px;
 }
 
 header h1 {
@@ -127,4 +132,32 @@ nav a:hover {
     .box-bg p {
         font-size: 1rem;
     }
+}
+
+.lang-space {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.lang-button {
+    background-color: #ffffff;
+    color: #24b01e; /* Verde que hace juego con el header */
+    border: 2px solid #e1dbbe;
+    padding: 6px 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.lang-button:hover {
+    background-color: #727272;
+    transform: scale(1.05);
+}
+
+.lang-button:active {
+    transform: scale(0.95);
 }
