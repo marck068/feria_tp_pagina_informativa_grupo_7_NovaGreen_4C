@@ -1,163 +1,472 @@
-/* --- ESTILOS GENERALES Y FONDO --- */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #dcd7bd; /* Color beige de fondo de la imagen */
+/* ==========================
+   CONFIGURACIÓN GENERAL
+========================== */
+* {
     margin: 0;
     padding: 0;
-    color: #ffffff; /* La mayoría del texto es blanco */
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-button:hover {
-    cursor: pointer;
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Fondo claro, ambiental y fresco */
+    background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 50%, #f7fee7 100%);
+    background-attachment: fixed;
+    color: #1e293b; /* Texto gris oscuro/carbón para excelente legibilidad */
+    overflow-x: hidden;
 }
 
-/* --- CABECERA (Fondo Verde) --- */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================
+   NAVBAR (Pegada arriba y a los bordes)
+========================== */
 header {
-    background-color: #2d742b;
-    padding: 20px 10px;
-    text-align: center;
-    border-bottom: solid 7px #1b4e1a;
-    box-shadow: 0 4px 10px #00000026; /* Sombra sutil inferior */
-    margin-bottom: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-header h1 {
-    font-size: 4rem;
-    margin: 0 0 15px 0;
-    font-weight: normal;
+.navbar {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 12px 5% !important;
+    background: rgba(255, 255, 255, 0.88) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 0 !important; /* Sin bordes flotantes ni redondeados */
 }
 
-/* Barra de navegación */
-nav {
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a !important;
+}
+
+.logo span {
+    background: linear-gradient(135deg, #059669, #0284c7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.menu .nav-link {
+    color: #334155 !important;
+    font-weight: 600;
+    position: relative;
+    padding: 8px 16px !important;
+    transition: color 0.3s ease;
+}
+
+.menu .nav-link:hover {
+    color: #059669 !important;
+}
+
+.menu .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #10b981;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.menu .nav-link:hover::after {
+    width: 70%;
+}
+
+#btn-lang {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #10b981, #0ea5e9);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+    transition: all 0.3s ease;
+}
+
+#btn-lang:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+/* ==========================
+   HERO SECTION (Espacio reducido)
+========================== */
+.hero {
+    min-height: calc(100vh - 65px);
     display: flex;
-    justify-content: center;
+    align-items: center;
+    /* Reducido a 80px superior para eliminar el gran hueco blanco */
+    padding: 80px 8% 40px; 
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     gap: 40px;
 }
 
-nav a {
-    color: #00eeff;
-    text-decoration: none;
-    font-size: 1.4rem;
-    transition: opacity 0.2s;
+.hero-text {
+    max-width: 600px;
 }
 
-nav a:hover {
-    opacity: 0.8;
+.tag {
+    background: #dcfce7;
+    color: #166534;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid #bbf7d0;
+    display: inline-block;
+    margin-bottom: 12px;
 }
 
-/* --- CONTENEDOR PRINCIPAL --- */
-.container {
-    max-width: 750px;
-    margin: 30px auto;
-    padding: 0 20px;
+.hero h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin: 10px 0 15px;
+    line-height: 1.12;
+    background: linear-gradient(135deg, #065f46, #0284c7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.cont-back {
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* Espacio entre las filas */
-}
-
-/* --- ESTILO BASE PARA TODAS LAS CAJAS --- */
-.box-bg {
-    padding: 20px 30px;
-    text-align: center; /* Todo el texto va centrado como en la imagen */
-    border: 3px solid #e1dbbe; /* Borde grueso claro característico */
-    border-radius: 4px;
-    
-    /* Pequeña sombra solicitada para dar profundidad */
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2); 
-    
-    transition: transform 0.2s;
-}
-
-.box-bg:hover {
-    transform: translateY(-2px); /* Efecto interactivo sutil */
-}
-
-.box-bg h2, .box-bg h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 2.7rem;
-}
-
-.box-bg p {
+.hero p {
     font-size: 1.15rem;
-    line-height: 1.4;
-    margin: 0;
+    line-height: 1.7;
+    color: #475569;
 }
 
-/* Enlaces dentro de las cajas */
-.box-bg a {
-    color: #ffffff;
-    font-weight: bold;
+.hero-image img {
+    width: 460px;
+    filter: drop-shadow(0 15px 25px rgba(16, 185, 129, 0.2));
+    animation: floating 4s ease-in-out infinite;
 }
 
-/* --- GRADIENTES PERSONALIZADOS POR CAJA --- */
-
-/* Fila 1: Caja Verde Oliva (¿Qué es Salva la Ciudad?) */
-.box-1 {
-    background: linear-gradient(180deg, #878c1c 0%, #6e7214 100%);
-}
-.box-1 h2 {
-    color: #ffffff;
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
-/* Fila 2: Caja Marrón/Rojizo (Jugar ya) */
-.box-2 {
-    background: linear-gradient(180deg, #91221b 0%, #751914 100%);
-    padding: 15px 20px; /* Un poco más delgada como en la foto */
-}
-
-/* Fila 3: Caja Azul Marino (¿Quiénes somos?) */
-.box-3 {
-    background: linear-gradient(180deg, #18227c 0%, #101659 100%);
-}
-.box-3 h3 {
-    color: #ffffff;
-}
-
-/* --- DISEÑO RESPONSIVO (CELULARES) --- */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2.2rem;
-    }
-    nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .box-bg h2, .box-bg h3 {
-        font-size: 1.4rem;
-    }
-    .box-bg p {
-        font-size: 1rem;
-    }
-}
-
-.lang-space {
+.buttons {
+    margin-top: 25px;
     display: flex;
+    gap: 15px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25);
+}
+
+.btn-secondary {
+    background: white;
+    color: #0f172a;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.35);
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    border-color: #10b981;
+    color: #059669;
+}
+
+/* ==========================
+   SECCIONES COMUNES
+========================== */
+section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #065f46, #0369a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+}
+
+.section-title h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #10b981;
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+
+/* ==========================
+   ABOUT
+========================== */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-image img {
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+.about-text {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 35px;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.about-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #334155;
+    margin-bottom: 15px;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================
+   TARJETAS & GRIDS
+========================== */
+.feature-grid, .games-grid, .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.feature-card, .game-card, .news-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    padding: 30px 22px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover, .game-card:hover, .news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 32px rgba(16, 185, 129, 0.12);
+    border-color: #a7f3d0;
+}
+
+.feature-card i {
+    font-size: 2.2rem;
+    color: #10b981;
+    margin-bottom: 15px;
+    background: #ecfdf5;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.feature-card h3, .game-card h3, .news-card h3 {
+    font-size: 1.25rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.feature-card p, .news-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.game-card img {
+    border-radius: 12px;
+    margin-bottom: 15px;
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ==========================
+   ESTADÍSTICAS
+========================== */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffffff, #f0fdf4);
+    border: 1px solid #dcfce7;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+}
+
+.stat h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #059669;
+    margin-bottom: 5px;
+}
+
+.stat p {
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ==========================
+   EQUIPO
+========================== */
+.team-container {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    max-width: 1000px;
-    margin: 0 auto;
+    gap: 35px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 35px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-.lang-button {
-    background-color: #ffffff;
-    color: #24b01e; /* Verde que hace juego con el header */
-    border: 2px solid #e1dbbe;
-    padding: 6px 12px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 4px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-    transition: background-color 0.2s, transform 0.1s;
+.team-container img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #10b981;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
 }
 
-.lang-button:hover {
-    background-color: #727272;
-    transform: scale(1.05);
+.team-container p {
+    font-size: 1.05rem;
+    color: #334155;
+    max-width: 600px;
+    line-height: 1.7;
 }
 
-.lang-button:active {
-    transform: scale(0.95);
+/* ==========================
+   FOOTER
+========================== */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: #0f172a;
+    color: white;
+    margin-top: 70px;
+}
+
+footer h2 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    color: #34d399;
+}
+
+.social {
+    margin: 20px 0;
+}
+
+.social i {
+    font-size: 1.5rem;
+    margin: 0 12px;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.social i:hover {
+    color: #34d399;
+}
+
+footer p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 992px) {
+    .hero {
+        padding-top: 75px;
+        min-height: auto;
+    }
+
+    .hero-content, .about-container, .team-container {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .navbar {
+        padding: 10px 20px !important;
+    }
 }

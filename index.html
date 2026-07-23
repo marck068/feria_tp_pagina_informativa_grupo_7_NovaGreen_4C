@@ -4,72 +4,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Salva la Ciudad</title>
+
+    <!-- Fuente moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tu CSS Personalizado -->
     <link rel="stylesheet" href="static/css/style.css">
-    <title>GreenNova anuncios</title>
 </head>
 
 <body>
-    <!-- Cabecera -->
+
+    <!-- ================= NAVBAR ================= -->
     <header>
-        <!-- Encabezado principal -->
-        <h1 data-es="Salva la Ciudad" data-en="Save the City">Salva la Ciudad</h1>
-        <!-- Barra de navegación -->
-        <nav>
-            <!-- Enlaces -->
-            <a href="#" data-es="Inicio" data-en="Home">Inicio</a>
-            <a href="#" data-es="Más juegos" data-en="More games">Más juegos</a>
-            <a href="#" data-es="Más noticias" data-en="More news">Más noticias</a>
+        <nav class="navbar navbar-expand-lg navbar-light px-4">
+            <div class="container-fluid">
+
+                <!-- Logo -->
+                <a class="navbar-brand logo d-flex align-items-center gap-2" href="#inicio">
+                    🌿
+                    <span data-es="Salva la Ciudad" data-en="Save the City">
+                        Salva la Ciudad
+                    </span>
+                </a>
+
+                <!-- Botón Hamburguesa para móviles -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú colapsable -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 menu align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio" data-es="Inicio" data-en="Home">
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#juegos" data-es="Más juegos" data-en="More games">
+                                Más juegos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#noticias" data-es="Más noticias" data-en="More news">
+                                More news
+                            </a>
+                        </li>
+                        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                            <button id="btn-lang" class="btn btn-outline-light btn-sm">
+                                🌐 EN
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </nav>
     </header>
-    <div class="lang-space">
-        <button id="btn-lang" class="lang-button">🌐 EN</button>
-    </div>
 
-    <!-- Contenedor de la página -->
-    <main class="container">
-        <div class="cont-back">
-            <!-- Fila 1 -->
-            <div class="row">
-                <div class="box-bg box-1">
-                    <h2 data-es="¿Qué es Salva la Ciudad?" data-en="What is Save the City?">¿Qué es Salva la Ciudad?
-                    </h2>
-                    <p data-es="Salva la Ciudad es un juego web al que puedes jugar directamente del navegador, sin descargar nada. En este juego podrás jugar distintos minijuegos que te enseñarán conceptos e ideas fundamentales para poder cuida del medio ambiente, tales como el reciclaje, ahorro de energía y recursos, y de más cosas."
-                        data-en="Save the City is a web game you can play directly in your browser without downloading anything. In this game, you can play various mini-games that will teach you fundamental concepts and ideas to take care of the environment, such as recycling, saving energy and resources, and more.">
-                        Salva la Ciudad es un juego web al que puedes jugar directamente del navegador, sin descargar
-                        nada. En este juego podrás jugar distintos minijuegos que te enseñarán conceptos e ideas
-                        fundamentales para poder cuida del medio ambiente, tales como el reciclaje, ahorro de energía y
-                        recursos, y de más cosas.</p>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="tag" data-es="VIDEOJUEGO EDUCATIVO" data-en="EDUCATIONAL GAME">
+                    VIDEOJUEGO EDUCATIVO
+                </span>
+
+                <h1 data-es="Salva la Ciudad" data-en="Save the City">
+                    Salva la Ciudad
+                </h1>
+
+                <p data-es="Aprende a cuidar el planeta mientras juegas increíbles minijuegos ecológicos."
+                   data-en="Learn how to protect the planet while playing amazing ecological mini-games.">
+                    Aprende a cuidar el planeta mientras juegas increíbles minijuegos ecológicos.
+                </p>
+
+                <div class="buttons">
+                    <a href="#" class="btn-primary">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span data-es="Jugar ahora" data-en="Play now">
+                            Jugar ahora
+                        </span>
+                    </a>
+
+                    <a href="#about" class="btn-secondary">
+                        <span data-es="Conocer más" data-en="Learn more">
+                            Conocer más
+                        </span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Fila 2 -->
-            <div class="row">
-                <div class="box-bg box-2">
-                    <h2 data-es="Jugar ya" data-en="Play now">Jugar ya</h2>
-                    <!-- Nota: se reemplazará el "#" con el enlace del juego prontamente-->
-                    <p class="box-desc" class="box-desc" data-es="Accede al juego mediante este <a href='#'>enlace</a>."
-                        data-en="Access the game through this <a href='#'>link</a>.">
-                        Accede al juego mediante este <a href="#">enlace</a>.</p>
-                </div>
-            </div>
-
-            <!-- Fila 3 -->
-            <div class="row">
-                <div class="box-bg box-3">
-                    <h3 data-es="¿Quiénes somos?" data-en="Who are we?">¿Quiénes somos?</h3>
-                    <p class="box-desc"
-                        data-es="Somos un pequeño grupo, nosotros queremos enseñar conceptos y prácticas importante para un buen cuidado del medio ambiente y el reciclaje con medios divertidos y entretenidos. De esta forma podremos fomentar de manera más eficiente a los jóvenes una enseñanza y mentalidad más enfocada al cuidado de la naturaleza y bajar los niveles de contaminación."
-                        data-en="We are a small group, we want to teach important concepts and practices for good environmental care and recycling through fun and entertaining means. In this way, we can more efficiently foster a mindset focused on caring for nature among young people and lower pollution levels.">
-                        Somos un pequeño grupo, nosotros queremos enseñar conceptos y prácticas importante para un buen
-                        cuidado del medio ambiente y el reciclaje con medios divertidos y entretenidos. De esta forma
-                        podremos fomentar de manera más eficiente a los jóvenes una enseñanza y mentalidad más enfocada
-                        al cuidado de la naturaleza y bajar los niveles de contaminación.</p>
-                </div>
+            <div class="hero-image">
+                <img src="static/img/city.png" alt="Ciudad ecológica">
             </div>
         </div>
-    </main>
+    </section>
 
+
+    <!-- ================= INFORMACIÓN ================= -->
+    <section class="about" id="about">
+        <div class="section-title">
+            <h2 data-es="¿Qué es Salva la Ciudad?" data-en="What is Save the City?">
+                ¿Qué es Salva la Ciudad?
+            </h2>
+        </div>
+
+        <div class="about-container">
+            <div class="about-image">
+                <img src="static/img/game.png" alt="Juego">
+            </div>
+
+            <div class="about-text">
+                <p data-es="Salva la Ciudad es un juego web al que puedes jugar directamente desde tu navegador, sin descargar nada."
+                   data-en="Save the City is a web game that you can play directly from your browser without downloading anything.">
+                    Salva la Ciudad es un juego web al que puedes jugar directamente desde tu navegador, sin descargar nada.
+                </p>
+
+                <p data-es="En este juego podrás disfrutar diferentes minijuegos que enseñan reciclaje, ahorro de energía, cuidado del agua y protección del medio ambiente."
+                   data-en="In this game you will enjoy different mini-games that teach recycling, energy saving, water care and environmental protection.">
+                    En este juego podrás disfrutar diferentes minijuegos que enseñan reciclaje, ahorro de energía, cuidado del agua y protección del medio ambiente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= CARACTERÍSTICAS ================= -->
+    <section class="features">
+        <div class="section-title">
+            <h2 data-es="Características" data-en="Features">Características</h2>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-recycle"></i>
+                <h3 data-es="Reciclaje" data-en="Recycling">Reciclaje</h3>
+                <p data-es="Aprende a separar residuos correctamente." data-en="Learn to separate waste correctly.">Aprende a separar residuos correctamente.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fa-solid fa-droplet"></i>
+                <h3 data-es="Ahorro de agua" data-en="Water saving">Ahorro de agua</h3>
+                <p data-es="Protege uno de los recursos más importantes." data-en="Protect one of the most vital resources.">Protege uno de los recursos más importantes.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3 data-es="Energía" data-en="Energy">Energía</h3>
+                <p data-es="Reduce el consumo energético." data-en="Reduce energy consumption.">Reduce el consumo energético.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fa-solid fa-tree"></i>
+                <h3 data-es="Naturaleza" data-en="Nature">Naturaleza</h3>
+                <p data-es="Cuida los ecosistemas." data-en="Take care of ecosystems.">Cuida los ecosistemas.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= MINIJUEGOS ================= -->
+    <section class="games" id="juegos">
+        <div class="section-title">
+            <h2 data-es="Minijuegos" data-en="Mini-games">Minijuegos</h2>
+        </div>
+
+        <div class="games-grid">
+            <div class="game-card">
+                <img src="static/img/recycle.jpg" alt="Recicla correctamente">
+                <h3 data-es="Recicla correctamente" data-en="Recycle correctly">Recicla correctamente</h3>
+            </div>
+
+            <div class="game-card">
+                <img src="static/img/water.jpg" alt="Ahorra agua">
+                <h3 data-es="Ahorra agua" data-en="Save water">Ahorra agua</h3>
+            </div>
+
+            <div class="game-card">
+                <img src="static/img/light.jpg" alt="Apaga luces">
+                <h3 data-es="Apaga luces" data-en="Turn off lights">Apaga luces</h3>
+            </div>
+
+            <div class="game-card">
+                <img src="static/img/tree.jpg" alt="Planta árboles">
+                <h3 data-es="Planta árboles" data-en="Plant trees">Planta árboles</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= EQUIPO ================= -->
+    <section class="team">
+        <div class="section-title">
+            <h2 data-es="¿Quiénes somos?" data-en="Who are we?">
+                ¿Quiénes somos?
+            </h2>
+        </div>
+
+        <div class="team-container">
+            <img src="static/img/team.png" alt="Equipo">
+            <p data-es="Somos un pequeño grupo de estudiantes que busca enseñar prácticas ambientales mediante tecnología y videojuegos."
+               data-en="We are a small group of students who want to teach environmental practices through technology and videogames.">
+                Somos un pequeño grupo de estudiantes que busca enseñar prácticas ambientales mediante tecnología y videojuegos.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ================= NOTICIAS ================= -->
+    <section class="news" id="noticias">
+        <div class="section-title">
+            <h2 data-es="Noticias" data-en="News">Noticias</h2>
+        </div>
+
+        <div class="news-grid">
+            <div class="news-card">
+                <h3 data-es="Nuevo contenido" data-en="New content">Nuevo contenido</h3>
+                <p data-es="Próximamente nuevos desafíos ecológicos." data-en="New ecological challenges coming soon.">Próximamente nuevos desafíos ecológicos.</p>
+            </div>
+
+            <div class="news-card">
+                <h3 data-es="Actualización" data-en="Update">Actualización</h3>
+                <p data-es="Mejoras y nuevos minijuegos." data-en="Improvements and new mini-games.">Mejoras y nuevos minijuegos.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <h2 data-es="🌿 Salva la Ciudad" data-en="🌿 Save the City">🌿 Salva la Ciudad</h2>
+
+        <div class="social">
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+
+        <p>© 2026 Salva la Ciudad</p>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tu JavaScript personalizado -->
     <script src="static/js/script.js"></script>
+
 </body>
 
 </html>
