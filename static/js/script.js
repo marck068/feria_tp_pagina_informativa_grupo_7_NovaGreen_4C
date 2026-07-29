@@ -1,26 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("¡Salva la Ciudad listo! 🌱");
+document.addEventListener('DOMContentLoaded', () => {
+    // Alternador de idioma
+    const btnLang = document.getElementById('btn-lang');
+    let currentLang = 'es';
 
-    const btnLang = document.getElementById("btn-lang");
-    let currentLang = "es";
+    btnLang.addEventListener('click', () => {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        btnLang.textContent = currentLang === 'es' ? '🌐 EN' : '🌐 ES';
 
-    if (btnLang) {
-        btnLang.addEventListener("click", () => {
-            // Alternamos idioma
-            currentLang = currentLang === "es" ? "en" : "es";
+        const elementsToTranslate = document.querySelectorAll('[data-es][data-en]');
 
-            // Cambiar texto del botón
-            btnLang.textContent = currentLang === "es" ? "🌐 EN" : "🌐 ES";
-
-            // Buscar todos los elementos traducibles
-            const translatableElements = document.querySelectorAll("[data-es]");
-
-            translatableElements.forEach(element => {
-                const textToTranslate = element.getAttribute(`data-${currentLang}`);
-                if (textToTranslate) {
-                    element.textContent = textToTranslate;
-                }
-            });
+        elementsToTranslate.forEach(element => {
+            const translation = element.getAttribute(`data-${currentLang}`);
+            if (translation) {
+                element.innerHTML = translation;
+            }
         });
-    }
+    });
 });

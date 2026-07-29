@@ -4,259 +4,503 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salva la Ciudad | NovaGreen</title>
 
-    <title>Salva la Ciudad</title>
-
-    <!-- Fuente moderna -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Iconos -->
+    <!-- Fuente Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Tu CSS Personalizado -->
+    <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
 
     <!-- ================= NAVBAR ================= -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light px-4">
-            <div class="container-fluid">
-
-                <!-- Logo -->
-                <a class="navbar-brand logo d-flex align-items-center gap-2" href="#inicio">
-                    🌿
-                    <span data-es="Salva la Ciudad" data-en="Save the City">
-                        Salva la Ciudad
-                    </span>
+    <header class="sticky-top py-3">
+        <div class="container">
+            <nav class="navbar navbar-expand-xl navbar-dark custom-nav rounded-pill px-4 py-2 shadow-lg">
+                <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#inicio">
+                    <span class="brand-icon"><i class="fa-solid fa-leaf"></i></span>
+                    <span class="brand-title">NovaGreen</span>
                 </a>
 
-                <!-- Botón Hamburguesa para móviles -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Menú colapsable -->
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 menu align-items-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#inicio" data-es="Inicio" data-en="Home">
-                                Inicio
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#juegos" data-es="Más juegos" data-en="More games">
-                                Más juegos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#noticias" data-es="Más noticias" data-en="More news">
-                                Más noticias
-                            </a>
-                        </li>
-                        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                            <button id="btn-lang" class="btn btn-outline-light btn-sm">
-                                🌐 EN
-                            </button>
+                    <ul class="navbar-nav ms-auto align-items-center gap-1 fw-medium text-sm">
+                        <li class="nav-item"><a class="nav-link px-3" href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#problematica" data-es="Problemática" data-en="Problem">Problemática</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#solucion" data-es="Solución" data-en="Solution">Solución</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#juegos" data-es="Minijuegos" data-en="Mini-games">Minijuegos</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#ods" data-es="ODS 13" data-en="SDG 13">ODS 13</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#tecnologias" data-es="Tecnologías" data-en="Tech">Tecnologías</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#equipo" data-es="Equipo" data-en="Team">Equipo</a></li>
+                        <li class="nav-item ms-xl-2 mt-2 mt-xl-0">
+                            <button id="btn-lang" class="btn btn-warning btn-sm rounded-pill px-3 fw-bold shadow-sm">🌐 EN</button>
                         </li>
                     </ul>
                 </div>
-
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
 
-    <!-- ================= HERO ================= -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="tag" data-es="VIDEOJUEGO EDUCATIVO" data-en="EDUCATIONAL GAME">
-                    VIDEOJUEGO EDUCATIVO
-                </span>
-
-                <h1 data-es="Salva la Ciudad" data-en="Save the City">
-                    Salva la Ciudad
-                </h1>
-
-                <p data-es="Aprende a cuidar el planeta mientras juegas increíbles minijuegos ecológicos." data-en="Learn how to protect the planet while playing amazing ecological mini-games.">
-                    Aprende a cuidar el planeta mientras juegas increíbles minijuegos ecológicos.
-                </p>
-
-                <div class="buttons">
-                    <a href="#" class="btn-primary">
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero d-flex align-items-center py-5 position-relative overflow-hidden" id="inicio">
+        <div class="hero-bg-overlay"></div>
+        <div class="container position-relative z-1 my-4">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6 hero-text">
+                    <div class="badge-tag mb-3 d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-success-subtle text-success border border-success-subtle fw-semibold">
                         <i class="fa-solid fa-gamepad"></i>
-                        <span data-es="Jugar ahora" data-en="Play now">
-                            Jugar ahora
-                        </span>
-                    </a>
-
-                    <a href="#about" class="btn-secondary">
-                        <span data-es="Conocer más" data-en="Learn more">
-                            Conocer más
-                        </span>
-                    </a>
+                        <span data-es="Plataforma Web & Videojuego Educativo" data-en="Web Platform & Educational Game">Plataforma Web & Videojuego Educativo</span>
+                    </div>
+                    <h1 class="display-3 fw-bold text-dark mb-3 lh-sm" data-es="Salva la Ciudad" data-en="Save the City">
+                        Salva la <span class="text-gradient">Ciudad</span>
+                    </h1>
+                    <p class="lead text-secondary mb-4 fs-5" data-es="Una iniciativa interactiva desarrollada por NovaGreen para enseñar el cuidado del medio ambiente mediante el juego, el ahorro de recursos y la práctica del reciclaje." data-en="An interactive initiative developed by NovaGreen to teach environmental protection through gaming, resource saving, and recycling practices.">
+                        Una iniciativa interactiva desarrollada por NovaGreen para enseñar el cuidado del medio ambiente mediante el juego, el ahorro de recursos y la práctica del reciclaje.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#juegos" class="btn btn-success btn-lg px-4 py-3 rounded-pill shadow-lg hover-up d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-play"></i>
+                            <span data-es="Jugar Ahora" data-en="Play Now">Jugar Ahora</span>
+                        </a>
+                        <a href="#problematica" class="btn btn-outline-success btn-lg px-4 py-3 rounded-pill hover-up">
+                            <span data-es="Ver Problemática" data-en="See Problem">Ver Problemática</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-image-wrapper position-relative d-inline-block">
+                        <img src="static/img/city.png" alt="Ciudad Eco Sostenible" class="img-fluid rounded-5 shadow-2xl main-hero-img">
+                        <div class="hero-floating-card shadow-lg bg-white rounded-4 p-3 d-flex align-items-center gap-3">
+                            <div class="bg-success text-white rounded-circle p-3 fs-4"><i class="fa-solid fa-seedling"></i></div>
+                            <div class="text-start">
+                                <h6 class="mb-0 fw-bold">Impacto Verde</h6>
+                                <small class="text-muted">Conciencia & Acción</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="hero-image">
-                <img src="static/img/city.png" alt="Ciudad ecológica">
+
+    <!-- ================= PROBLEMÁTICA ================= -->
+    <section class="problematic py-5 bg-gradient-light" id="problematica">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-success fw-bold text-uppercase tracking-wider">Desafío Actual</span>
+                <h2 class="fw-bold text-dark display-5 mt-1" data-es="Problemática Ambiental" data-en="Environmental Problem">
+                    Problemática Ambiental
+                </h2>
+                <div class="divider mx-auto bg-success rounded my-3" style="width: 60px; height: 4px;"></div>
+            </div>
+
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-lg rounded-5 overflow-hidden text-white bg-dark position-relative">
+                        <img src="static/img/basura.jpg" class="card-img opacity-50" alt="Basura y contaminación" style="height: 380px; object-fit: cover;">
+                        <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+                            <span class="badge bg-danger w-auto me-auto mb-2 px-3 py-2 fs-6">Chile</span>
+                            <h3 class="fw-bold mb-1 display-6">~17 Millones</h3>
+                            <p class="mb-0 text-light opacity-90" data-es="de toneladas de residuos sólidos al año" data-en="of tons of solid waste per year">de toneladas de residuos sólidos al año.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 ps-lg-5">
+                    <div class="stat-box p-4 bg-white rounded-4 shadow-sm border-start border-danger border-5 mb-4">
+                        <h3 class="fw-bold text-danger mb-1" data-es="Solo ~10% se recicla" data-en="Only ~10% is recycled">
+                            Solo 10% se recicla 
+                        </h3>
+                        <p class="text-secondary mb-0" data-es="El 90% restante termina en rellenos sanitarios y vertederos, agravando la crisis climática." data-en="The remaining 90% ends up in landfills, worsening the climate crisis.">
+                            El 90% restante termina en rellenos sanitarios y vertederos, agravando la crisis climática.
+                        </p>
+                    </div>
+
+                    <p class="fs-5 text-dark lh-base" data-es="Chile solo recicla cerca del 10% de sus residuos anuales; separar la basura es fundamental para reducir la contaminación y mitigar el cambio climático." data-en="Chile only recycles around 10% of its annual waste; separating trash is essential to reduce pollution and mitigate climate change.">
+                        Chile solo recicla cerca del 10% de sus residuos anuales; separar la basura es fundamental para reducir la contaminación y mitigar el cambio climático.
+                    </p>
+
+                    <div class="row g-3 mt-2">
+                        <div class="col-sm-4">
+                            <div class="p-3 bg-white rounded-4 shadow-sm text-center">
+                                <i class="fa-solid fa-smog text-success fs-3 mb-2"></i>
+                                <p class="small fw-bold mb-0" data-es="Reduce Contaminación" data-en="Reduces Pollution">Reduce Contaminación</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="p-3 bg-white rounded-4 shadow-sm text-center">
+                                <i class="fa-solid fa-box-archive text-success fs-3 mb-2"></i>
+                                <p class="small fw-bold mb-0" data-es="Ahorra Materias Primas" data-en="Saves Raw Materials">Ahorra Materias Primas</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="p-3 bg-white rounded-4 shadow-sm text-center">
+                                <i class="fa-solid fa-dumpster text-success fs-3 mb-2"></i>
+                                <p class="small fw-bold mb-0" data-es="Menos Vertederos" data-en="Fewer Landfills">Menos Vertederos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
 
-    <!-- ================= INFORMACIÓN ================= -->
-    <section class="about" id="about">
-        <div class="section-title">
-            <h2 data-es="¿Qué es Salva la Ciudad?" data-en="What is Save the City?">
-                ¿Qué es Salva la Ciudad?
-            </h2>
-        </div>
-
-        <div class="about-container">
-            <div class="about-image">
-                <img src="static/img/game.png" alt="Juego">
+    <!-- ================= OBJETIVO Y SOLUCIÓN TECNOLÓGICA ================= -->
+    <section class="solution py-5" id="solucion">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-success fw-bold text-uppercase tracking-wider">Nuestra Propuesta</span>
+                <h2 class="fw-bold text-dark display-5 mt-1" data-es="Solución Tecnológica y Objetivo" data-en="Tech Solution & Objective">
+                    Solución Tecnológica y Objetivo
+                </h2>
+                <div class="divider mx-auto bg-success rounded my-3" style="width: 60px; height: 4px;"></div>
             </div>
 
-            <div class="about-text">
-                <p data-es="Salva la Ciudad es un juego web al que puedes jugar directamente desde tu navegador, sin descargar nada." data-en="Save the City is a web game that you can play directly from your browser without downloading anything.">
-                    Salva la Ciudad es un juego web al que puedes jugar directamente desde tu navegador, sin descargar nada.
-                </p>
+            <div class="row g-4 align-items-stretch">
+                <!-- Objetivo -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-lg p-4 rounded-5 text-white bg-gradient-success hover-up">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="bg-white text-success rounded-circle d-inline-flex align-items-center justify-content-center p-3 mb-4 fs-2 shadow-sm" style="width: 70px; height: 70px;">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <h3 class="h2 fw-bold mb-3" data-es="Objetivo del Proyecto" data-en="Project Objective">Objetivo del Proyecto</h3>
+                                <p class="fs-5 lh-base opacity-95" data-es="Convertir la teoría del reciclaje en un hábito real y responsable mediante la interactividad, motivando a los jóvenes a cuidar el medioambiente de forma divertida." data-en="Turn recycling theory into a real, responsible habit through interactivity, encouraging young people to care for the environment in a fun way.">
+                                    Convertir la teoría del reciclaje en un hábito real y responsable mediante la interactividad, motivando a los jóvenes a cuidar el medioambiente de forma divertida.
+                                </p>
+                            </div>
+                            <img src="static/img/objetivo.png" alt="Naturaleza Verde" class="img-fluid rounded-4 mt-4 shadow-sm" style="height: 180px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
 
-                <p data-es="En este juego podrás disfrutar diferentes minijuegos que enseñan reciclaje, ahorro de energía, cuidado del agua y protección del medio ambiente." data-en="In this game you will enjoy different mini-games that teach recycling, energy saving, water care and environmental protection.">
-                    En este juego podrás disfrutar diferentes minijuegos que enseñan reciclaje, ahorro de energía, cuidado del agua y protección del medio ambiente.
-                </p>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ================= CARACTERÍSTICAS ================= -->
-    <section class="features">
-        <div class="section-title">
-            <h2 data-es="Características" data-en="Features">Características</h2>
-        </div>
-
-        <div class="feature-grid">
-            <div class="feature-card">
-                <i class="fa-solid fa-recycle"></i>
-                <h3 data-es="Reciclaje" data-en="Recycling">Reciclaje</h3>
-                <p data-es="Aprende a separar residuos correctamente." data-en="Learn to separate waste correctly.">Aprende a separar residuos correctamente.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fa-solid fa-droplet"></i>
-                <h3 data-es="Ahorro de agua" data-en="Water saving">Ahorro de agua</h3>
-                <p data-es="Protege uno de los recursos más importantes." data-en="Protect one of the most vital resources.">Protege uno de los recursos más importantes.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fa-solid fa-bolt"></i>
-                <h3 data-es="Energía" data-en="Energy">Energía</h3>
-                <p data-es="Reduce el consumo energético." data-en="Reduce energy consumption.">Reduce el consumo energético.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fa-solid fa-tree"></i>
-                <h3 data-es="Naturaleza" data-en="Nature">Naturaleza</h3>
-                <p data-es="Cuida los ecosistemas." data-en="Take care of ecosystems.">Cuida los ecosistemas.</p>
+                <!-- Solución Tecnológica -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-lg p-4 rounded-5 bg-white border border-success-subtle hover-up">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="bg-success-subtle text-success rounded-circle d-inline-flex align-items-center justify-content-center p-3 mb-4 fs-2 shadow-sm" style="width: 70px; height: 70px;">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <h3 class="h2 fw-bold text-dark mb-3" data-es="Solución Tecnológica" data-en="Tech Solution">Solución Tecnológica</h3>
+                                <p class="fs-5 text-secondary lh-base" data-es="Salva la Ciudad es una plataforma web con un videojuego educativo que enseña a cuidar el medio ambiente mediante minijuegos interactivos sobre reciclaje, ahorro de recursos y hábitos sostenibles." data-en="Save the City is a web platform with an educational video game that teaches environmental protection through interactive mini-games on recycling, resource saving, and sustainable habits.">
+                                    <strong>Salva la Ciudad</strong> es una plataforma web con un videojuego educativo que enseña a cuidar el medio ambiente mediante minijuegos interactivos sobre reciclaje, ahorro de recursos y hábitos sostenibles.
+                                </p>
+                            </div>
+                            <img src="static/img/game.png" alt="Videojuego Interactivo" class="img-fluid rounded-4 mt-4 shadow-sm" style="height: 180px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
 
     <!-- ================= MINIJUEGOS ================= -->
-    <section class="games" id="juegos">
-        <div class="section-title">
-            <h2 data-es="Minijuegos" data-en="Mini-games">Minijuegos</h2>
-        </div>
-
-        <div class="games-grid">
-            <div class="game-card">
-                <img src="static/img/recycle.png" alt="Recicla correctamente">
-                <h3 data-es="Recicla correctamente" data-en="Recycle correctly">Recicla correctamente</h3>
+    <section class="games py-5 bg-gradient-light" id="juegos">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-success fw-bold text-uppercase tracking-wider">Módulos Jugables</span>
+                <h2 class="fw-bold text-dark display-5 mt-1" data-es="Nuestros Minijuegos" data-en="Our Mini-games">
+                    Nuestros Minijuegos
+                </h2>
+                <div class="divider mx-auto bg-success rounded my-3" style="width: 60px; height: 4px;"></div>
             </div>
 
-            <div class="game-card">
-                <img src="static/img/water.png" alt="Ahorra agua">
-                <h3 data-es="Ahorra agua" data-en="Save water">Ahorra agua</h3>
-            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-md rounded-4 overflow-hidden hover-scale h-100 bg-white">
+                        <div class="position-relative">
+                            <img src="static/img/recycle.png" class="card-img-top" alt="Recicla correctamente" style="height: 180px; object-fit: cover;">
+                            <span class="badge bg-success position-absolute top-0 end-0 m-3 shadow">Nivel 1</span>
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h5 fw-bold text-dark mb-2" data-es="Recicla Correctamente" data-en="Recycle Correctly">Recicla Correctamente</h3>
+                            <p class="card-text small text-muted" data-es="Separa orgánicos, plásticos, papeles y vidrios a tiempo." data-en="Separate organics, plastics, papers, and glass in time.">Separa orgánicos, plásticos, papeles y vidrios a tiempo.</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="game-card">
-                <img src="static/img/light.png" alt="Apaga luces">
-                <h3 data-es="Apaga luces" data-en="Turn off lights">Apaga luces</h3>
-            </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-md rounded-4 overflow-hidden hover-scale h-100 bg-white">
+                        <div class="position-relative">
+                            <img src="static/img/water.png" class="card-img-top" alt="Cierra el Grifo" style="height: 180px; object-fit: cover;">
+                            <span class="badge bg-info text-dark position-absolute top-0 end-0 m-3 shadow">Nivel 2</span>
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h5 fw-bold text-dark mb-2" data-es="Cierra el Grifo" data-en="Save Water">Cierra el Grifo</h3>
+                            <p class="card-text small text-muted" data-es="Detén fugas de agua en los sectores de la ciudad contra reloj." data-en="Stop water leaks in city sectors against the clock.">Detén fugas de agua en los sectores de la ciudad contra reloj.</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="game-card">
-                <img src="static/img/tree.png" alt="Planta árboles">
-                <h3 data-es="Planta árboles" data-en="Plant trees">Planta árboles</h3>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-md rounded-4 overflow-hidden hover-scale h-100 bg-white">
+                        <div class="position-relative">
+                            <img src="static/img/light.png" class="card-img-top" alt="Red Eléctrica" style="height: 180px; object-fit: cover;">
+                            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 shadow">Nivel 3</span>
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h5 fw-bold text-dark mb-2" data-es="Red Eléctrica" data-en="Power Grid">Red Eléctrica</h3>
+                            <p class="card-text small text-muted" data-es="Desconecta artefactos en desuso y optimiza el consumo." data-en="Unplug unused devices and optimize consumption.">Desconecta artefactos en desuso y optimiza el consumo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-md rounded-4 overflow-hidden hover-scale h-100 bg-white">
+                        <div class="position-relative">
+                            <img src="static/img/tree.png" class="card-img-top" alt="Reforestación" style="height: 180px; object-fit: cover;">
+                            <span class="badge bg-success position-absolute top-0 end-0 m-3 shadow">Nivel 4</span>
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h5 fw-bold text-dark mb-2" data-es="Reforestación" data-en="Reforestation">Reforestación</h3>
+                            <p class="card-text small text-muted" data-es="Plantación de árboles nativos para devolverle el aire limpio al mapa." data-en="Plant native trees to bring clean air back to the map.">Plantación de árboles nativos para devolverle el aire limpio al mapa.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
 
-    <!-- ================= EQUIPO ================= -->
-    <section class="team">
-        <div class="section-title">
-            <h2 data-es="¿Quiénes somos?" data-en="Who are we?">
-                ¿Quiénes somos?
-            </h2>
+    <!-- ================= ODS RELACIONADO ================= -->
+    <section class="ods py-5 bg-gradient-dark text-white" id="ods">
+        <div class="container py-4">
+            <div class="row align-items-center gy-4">
+                <div class="col-md-4 text-center text-md-end">
+                    <img src="static/img/ods.png" 
+                         alt="ODS 13: Acción por el Clima" 
+                         class="img-fluid rounded-4 shadow-2xl hover-up" 
+                         style="max-width: 180px; width: 100%;">
+                </div>
+                <div class="col-md-8 ps-md-4">
+                    <div class="badge bg-warning text-dark mb-3 px-3 py-2 fw-bold" data-es="COMPROMISO GLOBAL" data-en="GLOBAL COMMITMENT">COMPROMISO GLOBAL</div>
+                    <h2 class="display-5 fw-bold mb-3" data-es="ODS 13: Acción por el Clima" data-en="SDG 13: Climate Action">
+                        ODS 13: Acción por el Clima
+                    </h2>
+                    <p class="fs-5 text-light opacity-90 mb-0 lh-base" data-es="El proyecto promueve el reciclaje y la correcta distribución de los residuos, además de prácticas dinámicas que ayuden al ahorro de energía, preservación de agua y recursos de la comunidad." data-en="The project promotes recycling and proper waste distribution, as well as dynamic practices that help save energy, preserve water, and community resources.">
+                        El proyecto promueve el reciclaje y la correcta distribución de los residuos, además de prácticas dinámicas que ayuden al ahorro de energía, preservación de agua y recursos de la comunidad.
+                    </p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="team-container">
-            <img src="static/img/team.png" alt="Equipo">
-            <p data-es="Somos un pequeño grupo de estudiantes que busca enseñar prácticas ambientales mediante tecnología y videojuegos." data-en="We are a small group of students who want to teach environmental practices through technology and videogames.">
-                Somos un pequeño grupo de estudiantes que busca enseñar prácticas ambientales mediante tecnología y videojuegos.
-            </p>
+
+    <!-- ================= TECNOLOGÍAS UTILIZADAS ================= -->
+    <section class="tech py-5 bg-gradient-light" id="tecnologias">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-success fw-bold text-uppercase tracking-wider">Stack Técnico</span>
+                <h2 class="fw-bold text-dark display-5 mt-1" data-es="Tecnologías Utilizadas" data-en="Technologies Used">
+                    Tecnologías Utilizadas
+                </h2>
+                <div class="divider mx-auto bg-success rounded my-3" style="width: 60px; height: 4px;"></div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-4 col-6">
+                    <div class="p-3 bg-white shadow-sm rounded-4 text-center hover-up border border-light">
+                        <i class="fa-brands fa-html5 fs-2 text-danger mb-2"></i>
+                        <h4 class="h6 fw-bold mb-1">HTML5</h4>
+                        <p class="small text-muted mb-0" data-es="Estructura web" data-en="Web structure">Estructura web</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="p-3 bg-white shadow-sm rounded-4 text-center hover-up border border-light">
+                        <i class="fa-brands fa-css3-alt fs-2 text-primary mb-2"></i>
+                        <h4 class="h6 fw-bold mb-1">CSS3</h4>
+                        <p class="small text-muted mb-0" data-es="Diseño y estilos" data-en="Design & styling">Diseño y estilos</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="p-3 bg-white shadow-sm rounded-4 text-center hover-up border border-light">
+                        <i class="fa-brands fa-js fs-2 text-warning mb-2"></i>
+                        <h4 class="h6 fw-bold mb-1">JavaScript</h4>
+                        <p class="small text-muted mb-0" data-es="Lógica interactiva" data-en="Interactive logic">Lógica interactiva</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6">
+                    <div class="p-3 bg-white shadow-sm rounded-4 text-center hover-up border border-light">
+                        <i class="fa-solid fa-flask fs-2 text-secondary mb-2"></i>
+                        <h4 class="h6 fw-bold mb-1">Flask</h4>
+                        <p class="small text-muted mb-0" data-es="Servidor web" data-en="Web server">Servidor web</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="p-3 bg-white shadow-sm rounded-4 text-center hover-up border border-light">
+                        <i class="fa-brands fa-python fs-2 text-info mb-2"></i>
+                        <h4 class="h6 fw-bold mb-1">Python</h4>
+                        <p class="small text-muted mb-0" data-es="Backend del proyecto" data-en="Project backend">Backend del proyecto</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-white rounded-5 shadow-sm border-start border-success border-5">
+                <p class="mb-0 text-secondary fs-6 lh-base" data-es="Estas herramientas nos permitirán maquetar el contenido del sitio, darle un aspecto visual atractivo y programar la lógica interactiva de los minijuegos. Además, las usaremos para gestionar las distintas páginas de la plataforma y ejecutar la lógica del backend desde el archivo server.py." data-en="These tools allow us to layout the site content, provide an attractive visual aspect, and code the interactive mini-game logic. Additionally, we use them to manage platform pages and execute backend logic from the server.py file.">
+                    Estas herramientas nos permitirán maquetar el contenido del sitio, darle un aspecto visual atractivo y programar la lógica interactiva de los minijuegos. Además, las usaremos para gestionar las distintas páginas de la plataforma y ejecutar la lógica del backend desde el archivo <code class="text-success bg-success-subtle px-2 py-1 rounded">server.py</code>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= EQUIPO / ¿QUIÉNES SOMOS? (COMPACTO Y PROPORCIONADO) ================= -->
+    <section class="team py-5" id="equipo">
+        <div class="container py-4">
+            
+            <div class="text-center mb-5">
+                <span class="text-success fw-bold text-uppercase tracking-wider" data-es="Integrantes" data-en="Members">Integrantes</span>
+                <h2 class="fw-bold text-dark display-5 mt-1" data-es="¿Quiénes somos?" data-en="Who are we?">
+                    ¿Quiénes somos?
+                </h2>
+                <div class="divider mx-auto bg-success rounded my-3" style="width: 60px; height: 4px;"></div>
+            </div>
+
+            <!-- Presentación compacta con imagen más pequeña -->
+            <div class="row align-items-center justify-content-center gy-4 mb-4">
+                <div class="col-md-3 col-sm-5 text-center">
+                    <img src="static/img/team.png" alt="Equipo NovaGreen" class="img-fluid rounded-4 shadow-sm" style="max-width: 180px; width: 100%;">
+                </div>
+                <div class="col-md-7 col-sm-7">
+                    <div class="p-4 bg-white rounded-4 shadow-sm border-start border-success border-5">
+                        <h3 class="h5 fw-bold text-dark mb-2" data-es="Equipo NovaGreen" data-en="NovaGreen Team">
+                            Equipo NovaGreen
+                        </h3>
+                        <p class="text-secondary mb-0 fs-6 lh-base" 
+                           data-es="Somos un pequeño grupo de estudiantes que busca enseñar prácticas ambientales mediante tecnología y videojuegos, creadores del proyecto Salva la Ciudad." 
+                           data-en="We are a small group of students who want to teach environmental practices through technology and video games, creators of the Save the City project.">
+                            Somos un pequeño grupo de estudiantes que busca enseñar prácticas ambientales mediante tecnología y videojuegos, creadores del proyecto Salva la Ciudad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nombres de Integrantes -->
+            <div class="row g-3 justify-content-center text-center">
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded-4 shadow-sm hover-up border border-light">
+                        <div class="avatar-box bg-success-subtle text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 45px; height: 45px;">
+                            <i class="fa-solid fa-code fs-6"></i>
+                        </div>
+                        <h6 class="fw-bold text-dark mb-0 fs-6">Elisa Soto</h6>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded-4 shadow-sm hover-up border border-light">
+                        <div class="avatar-box bg-success-subtle text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 45px; height: 45px;">
+                            <i class="fa-solid fa-laptop-code fs-6"></i>
+                        </div>
+                        <h6 class="fw-bold text-dark mb-0 fs-6">Krishna López</h6>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded-4 shadow-sm hover-up border border-light">
+                        <div class="avatar-box bg-success-subtle text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 45px; height: 45px;">
+                            <i class="fa-solid fa-gamepad fs-6"></i>
+                        </div>
+                        <h6 class="fw-bold text-dark mb-0 fs-6">Donovan Sáez</h6>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded-4 shadow-sm hover-up border border-light">
+                        <div class="avatar-box bg-success-subtle text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 45px; height: 45px;">
+                            <i class="fa-solid fa-gears fs-6"></i>
+                        </div>
+                        <h6 class="fw-bold text-dark mb-0 fs-6">Marcelo Ríos</h6>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded-4 shadow-sm hover-up border border-light">
+                        <div class="avatar-box bg-success-subtle text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 45px; height: 45px;">
+                            <i class="fa-solid fa-database fs-6"></i>
+                        </div>
+                        <h6 class="fw-bold text-dark mb-0 fs-6">Jonathan Alquinta</h6>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
 
     <!-- ================= NOTICIAS ================= -->
-    <section class="news" id="noticias">
-        <div class="section-title">
-            <h2 data-es="Noticias" data-en="News">Noticias</h2>
-        </div>
-
-        <div class="news-grid">
-            <div class="news-card">
-                <h3 data-es="Nuevo contenido" data-en="New content">Nuevo contenido</h3>
-                <p data-es="Próximamente nuevos desafíos ecológicos." data-en="New ecological challenges coming soon.">Próximamente nuevos desafíos ecológicos.</p>
+    <section class="news py-5 bg-gradient-light" id="noticias">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-success fw-bold text-uppercase tracking-wider">Novedades</span>
+                <h2 class="fw-bold text-dark display-5 mt-1" data-es="Noticias y Novedades" data-en="News & Updates">
+                    Noticias y Novedades
+                </h2>
+                <div class="divider mx-auto bg-success rounded my-3" style="width: 60px; height: 4px;"></div>
             </div>
 
-            <div class="news-card">
-                <h3 data-es="Actualización" data-en="Update">Actualización</h3>
-                <p data-es="Mejoras y nuevos minijuegos." data-en="Improvements and new mini-games.">Mejoras y nuevos minijuegos.</p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm p-4 rounded-5 bg-white h-100 hover-up">
+                        <span class="badge bg-success w-auto me-auto mb-3 px-3 py-2" data-es="Actualización 2026" data-en="Update 2026">Actualización 2026</span>
+                        <h3 class="h4 fw-bold text-dark" data-es="Nuevos Desafíos de Reforestación Verde" data-en="New Green Reforestation Challenges">Nuevos Desafíos de Reforestación Verde</h3>
+                        <p class="text-muted mb-0" data-es="Integramos contenido pedagógico basado en la reforestación profesional y el cuidado del suelo urbano." data-en="We integrated pedagogical content based on professional reforestation and urban soil care.">Integramos contenido pedagógico basado en la reforestación profesional y el cuidado del suelo urbano.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm p-4 rounded-5 bg-white h-100 hover-up">
+                        <span class="badge bg-info text-dark w-auto me-auto mb-3 px-3 py-2" data-es="Mejoras Web" data-en="Web Improvements">Mejoras Web</span>
+                        <h3 class="h4 fw-bold text-dark" data-es="Soporte Multilingüe Completo" data-en="Full Multilingual Support">Soporte Multilingüe Completo</h3>
+                        <p class="text-muted mb-0" data-es="¡Ahora la plataforma permite alternar fluidamente entre Español e Inglés con un solo clic!" data-en="Now the platform allows smooth switching between Spanish and English with a single click!">¡Ahora la plataforma permite alternar fluidamente entre Español e Inglés con un solo clic!</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
 
     <!-- ================= FOOTER ================= -->
-    <footer>
-        <h2 data-es="🌿 Salva la Ciudad" data-en="🌿 Save the City">🌿 Salva la Ciudad</h2>
+    <footer class="bg-dark text-white pt-5 pb-4 border-top border-success border-4">
+        <div class="container text-center">
+            <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                <i class="fa-solid fa-leaf text-success fs-3"></i>
+                <h3 class="h4 fw-bold mb-0">NovaGreen - Salva la Ciudad</h3>
+            </div>
 
-        <div class="social">
-            <i class="fa-brands fa-github"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-youtube"></i>
+            <p class="text-light opacity-75 max-w-md mx-auto mb-4" data-es="Educación y concientización ambiental a través de la tecnología." data-en="Environmental education and awareness through technology.">
+                Educación y concientización ambiental a través de la tecnología.
+            </p>
+
+            <div class="social d-flex justify-content-center gap-3 mb-4">
+                <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <hr class="border-secondary opacity-25 my-4">
+
+            <p class="mb-0 text-secondary small">© 2026 Proyecto NovaGreen. Desarrollado por Elisa Soto, Krishna López, Donovan Sáez, Marcelo Ríos y Jonathan Alquinta.</p>
         </div>
-
-        <p>© 2026 Salva la Ciudad</p>
     </footer>
-
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Tu JavaScript personalizado -->
+    <!-- Script personalizado -->
     <script src="static/js/script.js"></script>
-
 </body>
 
 </html>
